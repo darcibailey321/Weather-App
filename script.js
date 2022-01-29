@@ -1,31 +1,3 @@
-// Render weather data to the page.
-
-// From the <form> element, listen to the "submit"
-// From the <button> element, listen to the "click" 
-
-    // Select <input>, get its value, and provide it to the geo API
-
-// From the <button> container element, listen to the <button> "click"
-
-    // Get the city from the button's data attribute
-
-// Fetch geo data (lat, long)
-
-    // q = name of the city (query)
-
-    // limit 5 (option)
-
-    // appid = my custom API key for my weather dashboard
-
-// Fetch onecall weather data
-    //lat
-    //lon
-    //appid
-    //units = imperial
-    //exclude = minutely,hourly
-
-//Print/Render the weather data to the page. (then)
-
 var weatherContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 
@@ -52,14 +24,27 @@ function getApi(lon, lat, name) {
     document.getElementById("humidity").textContent = humidity;
     document.getElementById("uvIndex"). textContent = uv;
     document.getElementById("city"). textContent = name;
-    
-// debugger
+
     for (var i=0; i<5; i++) {
       console.log(data.daily[i])
       var card = document.createElement("div")
       card.textContent = data.daily[i].humidity
       document.querySelector(".columns").appendChild(card)
     }
+      for (var i=0; i<5; i++) {
+        console.log(data.daily[i])
+        var card = document.createElement("div")
+        card.textContent = data.daily[i].temp.day
+        document.querySelector(".columns").appendChild(card)
+
+    }
+    for (var i=0; i<5; i++) {
+      console.log(data.daily[i])
+      var card = document.createElement("div")
+      card.textContent = data.daily[i].wind_speed
+      document.querySelector(".columns").appendChild(card)
+
+  }
     
     });
 }
@@ -78,7 +63,7 @@ function getCoordinates() {
       .then(function (data) {
         var lon = data[0].lon
         var lat = data[0].lat
-        debugger
+
         var searchHistory = JSON.parse(localStorage.getItem("History")) || []
         searchHistory.push(cityName)
 
