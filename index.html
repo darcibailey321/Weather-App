@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Weather Dashboard</h1>
+    </div>
+
+    <main class="flex-row justify-space-between">
+        <div class="card">
+            <div>
+                <h3 class="card-header">Search for a City:</h3>
+                <div id="user-form" class="card-body">
+                    <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
+                    <button id="submit" class="button">Search</button>
+                </div>
+            </div>
+            <main class="flex-row justify-space-between">
+                <div class="card2">
+                    <div>
+                        <div>Showing Results for: <span id="city"></span></div>
+                        <div>Temp: <span id="temp"></span></div>
+                        <div>Wind Speed (MPH): <span id="wind"></span></div>
+                        <div>Humidity: <span id="humidity"></span></div>
+                        <div>UV Index: <span id="uvIndex"></span></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div class="columns is-mobile">5-Day Forcast
+            <!-- <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+            <div class="column">4</div>
+            <div class="column">5</div>
+          </div> -->
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
